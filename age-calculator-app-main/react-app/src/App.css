@@ -1,4 +1,8 @@
 @font-face {
+  font-family: "Poppins400 Italic";
+  src: url("../../assets/fonts/Poppins-Italic.ttf");
+}
+@font-face {
   font-family: "Poppins700";
   src: url("../../assets/fonts/Poppins-Bold.ttf");
 }
@@ -38,15 +42,6 @@ body {
   flex-wrap: wrap;
 }
 
-.box-fields label.error p {
-  color: #FF5959;
-}
-
-.box-fields label.error input:focus {
-  outline: none;
-  border: 2px solid #FF5959;
-}
-
 .box-title {
   font-family: 'Poppins700';
   font-style: normal;
@@ -81,6 +76,20 @@ body {
 .box-input:focus {
   outline: none;
   border: 2px solid #854DFF;
+}
+
+.box-errorInp {
+  outline: none;
+  border: 2px solid #FF5959;
+}
+
+.box-errorTxt {
+  color: #FF5959;
+  font-family: 'Poppins400 Italic';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .box-submit {
