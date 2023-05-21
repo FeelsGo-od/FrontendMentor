@@ -11,6 +11,13 @@
   src: url("../../assets/fonts/Poppins-ExtraBoldItalic.ttf");
 }
 
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -141,8 +148,15 @@ body {
   color: #151515;
 }
 
+.box-field {
+  display: flex;
+}
+
 .box-result span {
   color: #854DFF;
+  margin: 0;
+  margin-right: 15px;
+  text-align: -webkit-center;
 }
 
 .box-result .error-message {
