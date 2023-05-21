@@ -92,15 +92,15 @@ const birth = new Date(year, month - 1, day)
 
 Regular expressions: Even though, I have no regexp in that project, I actually used them when I was trying to write a pattern for form validation. It occured that form hook has "min" and "max" options for input validations which made everything a lot easier. But, I feel like I need to know how to write regexp on at least basic level.
 
-### Useful resources
+<!-- ### Useful resources
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept. -->
 
 ## Author
 
 - Website - [Andrew Sokolowsky](https://www.andrewdevvv.com/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/FeelsGo-od)
+- Frontend Mentor - [@FeelsGo-od](https://www.frontendmentor.io/profile/FeelsGo-od)
 
 ## Acknowledgments
 
