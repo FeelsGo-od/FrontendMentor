@@ -219,7 +219,6 @@ body {
   font-weight: 800;
   font-size: 104px;
   line-height: 110%;
-  letter-spacing: -0.05em;
   color: #151515;
 }
 
@@ -276,7 +275,7 @@ body {
   margin-top: 0;
 }
 
-.box-result span {
+.box-result .violet-txt {
   color: #854DFF;
   margin: 0;
   margin-right: 15px;
@@ -285,12 +284,16 @@ body {
   padding-left: 10px;
 }
 
-.box-result span .animated-container {
+.box-result .violet-txt .animated-container {
   text-align: start;
 }
 
+.box-result .violet-txt .animated-container div {
+  width: 100%;
+}
+
 @media (max-width: 1080px) {
-  .box-result span {
+  .box-result .violet-txt {
     padding-left: 0;
   }
 }

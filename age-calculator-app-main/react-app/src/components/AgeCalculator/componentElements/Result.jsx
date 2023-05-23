@@ -16,13 +16,13 @@ function Result ({ result }) {
     return (
         <div className="box-result">
             <div className='box-field'>
-                <span>{animatedNumber(result.years)}</span>years
+                <div className='violet-txt'>{animatedNumber(result.years)}</div>years
             </div>
             <div className='box-field'>
-                <span>{animatedNumber(result.months)}</span>months
+                <div className='violet-txt'>{animatedNumber(result.months)}</div>months
             </div>
             <div className='box-field'>
-                <span>{animatedNumber(result.days)}</span>days
+                <div className='violet-txt'>{animatedNumber(result.days)}</div>days
             </div>
         </div>
     )
