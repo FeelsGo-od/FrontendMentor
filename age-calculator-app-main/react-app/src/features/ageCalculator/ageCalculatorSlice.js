@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const ageCalculatorSlice = createSlice({
     name: 'ageCalculator',
     initialState: {
-        days: 0, months: 0, years: 0
+        days: '--', months: '--', years: '--'
     },
     reducers: {
         countAge: (state, action) => {

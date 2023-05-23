@@ -36,9 +36,10 @@ function Form ({ onSubmit, dayError, setDayError }) {
                 </label>
                 <label>
                     <p className="box-title">year</p>
-                    <input onChange={(e) => handleYear(e)} {...register('year', {required: true, min: 1, max: new Date().getFullYear()}) } type="text" className={errors.year || dayError ? 'box-input box-errorInp' : 'box-input'} defaultValue={year} placeholder="YYYY" />
+                    <input onChange={(e) => handleYear(e)} {...register('year', {required: true, min: 0, max: new Date().getFullYear()}) } type="text" className={errors.year || dayError ? 'box-input box-errorInp' : 'box-input'} defaultValue={year} placeholder="YYYY" />
                     {errors?.year?.type === "required" && <p className="box-errorTxt">This field is required</p>}
-                    {errors?.year?.type === "max" || errors?.year?.type === "min" && (<p>Must be a valid year</p>)}
+                    {errors?.year?.type === "max" && (<p className="box-errorTxt">Must be in the past</p>)}
+                    {errors?.year?.type === "min" && (<p className="box-errorTxt">Must be in our era ;D</p>)}
                 </label>
             </div>
             <div className="box-submit">
