@@ -16,35 +16,35 @@ function Form ({ onSubmit, dayError, setDayError }) {
         setYear(e.target.value)
     }
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="box-form">
             <div className="box-fields">
-                <label>
+                <div>
                     <p className="box-title">day</p>
                     <input onChange={(e) => handleDay(e)} {...register('day', {required: true, min: 1, max: 31, onChange: () => setDayError('')}) } type="text" className={errors.day || dayError ? 'box-input box-errorInp' : 'box-input'} defaultValue={day} placeholder="DD" />
                     {errors?.day?.type === "required" && <p className="box-errorTxt">This field is required</p>}
                     {errors?.day?.type === "min" || errors?.day?.type === "max" && <p className="box-errorTxt">Must be a valid day</p>}
                     {dayError === 'dayError' && <p className="box-errorTxt">Must be a valid day</p>}
-                </label>
-                <label>
+                </div>
+                <div>
                     <p className="box-title">month</p>
                     <input onChange={(e) => handleMonth(e)} {...register('month', {required: true, min: 1, max: 12}) } type="text" className={errors.month || dayError ? 'box-input box-errorInp' : 'box-input'} defaultValue={month} placeholder="MM" />
                     {errors?.month?.type === "required" && <p className="box-errorTxt">This field is required</p>}
                     {errors?.month?.type === "min" || errors?.month?.type === "max" && <p className="box-errorTxt">Must be a valid month</p>}
-                </label>
-                <label>
+                </div>
+                <div>
                     <p className="box-title">year</p>
                     <input onChange={(e) => handleYear(e)} {...register('year', {required: true, min: 0, max: new Date().getFullYear()}) } type="text" className={errors.year || dayError ? 'box-input box-errorInp' : 'box-input'} defaultValue={year} placeholder="YYYY" />
                     {errors?.year?.type === "required" && <p className="box-errorTxt">This field is required</p>}
                     {errors?.year?.type === "max" && (<p className="box-errorTxt">Must be in the past</p>)}
                     {errors?.year?.type === "min" && (<p className="box-errorTxt">Must be in our era ;D</p>)}
-                </label>
+                </div>
             </div>
             <div className="box-submit">
                 <div className="box-hr"></div>
-                <button type="submit"></button>
+                <button type="submit" aria-label="Submit Your Birthday date" title="Submit Your Birthday date"></button>
             </div>
         </form>
     )

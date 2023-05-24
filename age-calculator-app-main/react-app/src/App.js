@@ -3,9 +3,9 @@ import AgeCalculator from './components/AgeCalculator/AgeCalculator'
 
 function App() {
   return (
-    <div className="App">
+    <main role="main">
       <AgeCalculator />
-    </div>
+    </main>
   );
 }
 

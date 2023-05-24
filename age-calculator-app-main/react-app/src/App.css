@@ -97,10 +97,10 @@ body {
   .box-fields {
     flex-wrap: nowrap;
   }
-  .box-fields label {
+  .box-fields > div {
     width: 100%;
   }
-  .box-fields label:nth-child(3) {
+  .box-fields > div:nth-child(3) {
     position: relative;
     left: -16px;
   }
