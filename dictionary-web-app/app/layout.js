@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
           </div>
         </header>
         {children}
-        <footer className="px-10 md:px-[2.5rem] pt-[2rem] mxl:px-[22rem]">
+        <footer className="px-10 md:px-[2.5rem] pt-[2rem] mxl:px-[22rem] pb-[5.313rem] md:pb-[7.375rem] mxl:pb-[7.75rem]">
           <div className="w-full bg-E9 h-px"></div>
           <ul className="flex flex-wrap md:items-center pt-[1.5rem]">
             <li className="text-75 text-[0.875rem] leading-[1.375rem] underline">Source</li>
