@@ -2,7 +2,7 @@ import { inter700, inter400 } from "./elements/fonts"
 
 export default function Page() {
     return (
-        <div className={`${inter400.variable} font-inter400 main px-10 pt-[1.5rem] md:pt-[2.688rem]`}>
+        <div className={`${inter400.variable} font-inter400 main px-10 md:px-[2.438rem] pt-[1.5rem] md:pt-[2.688rem] mxl:px-[22rem]`}>
             <div className="word-display flex items-center flex-wrap justify-between">
                 <div>
                     <h1 className={`${inter700.variable} font-inter700 text-[2rem] md:text-[4rem] leading-[2.438rem] md:leading-[4.813rem] text-2D`}>keyboard</h1>
@@ -21,9 +21,9 @@ export default function Page() {
                 <div className="pt-[2rem] md:pt-[2.5rem]">
                     <p className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6">Meaning</p>
                     <ul className="list-image-[url(../public/images/Oval.svg)] pt-[0.25rem] text-[0.938rem] leading-[1.5rem] md:text-[1.125rem]">
-                        <li className="pl-[1.25rem] pt-[0.813rem]">(etc.) A set of keys used to operate a typewriter, computer etc.</li>
-                        <li className="pl-[1.25rem] pt-[0.813rem]">A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
-                        <li className="pl-[1.25rem] pt-[0.813rem]">A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.</li>
+                        <li className="pl-[1.25rem] pt-[0.813rem] ml-[0.813rem] md:ml-[1.375rem]">(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+                        <li className="pl-[1.25rem] pt-[0.813rem] ml-[0.813rem] md:ml-[1.375rem]">A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
+                        <li className="pl-[1.25rem] pt-[0.813rem] ml-[0.813rem] md:ml-[1.375rem]">A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.</li>
                     </ul>
                     <div className="pt-[1.5rem] md:pt-[2rem]">
                         <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6">Synonyms</span>
@@ -39,7 +39,7 @@ export default function Page() {
                 <div className="pt-[2rem] md:pt-[2.5rem]">
                     <p className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6">Meaning</p>
                     <ul className="list-image-[url(../public/images/Oval.svg)] pt-[0.25rem] text-[0.938rem] leading-[1.5rem] md:text-[1.125rem]">
-                        <li className="pl-[1.25rem] pt-[0.813rem]">
+                        <li className="pl-[1.25rem] pt-[0.813rem] ml-[0.813rem] md:ml-[1.375rem]">
                             To type on a computer keyboard.
                             <p className="text-75 text-[0.938rem] leading-[1.5rem] md:text-[1.125rem] md:leading-6 pt-[0.813rem]">“Keyboarding is the part of this job I hate the most.”</p>
                         </li>

@@ -28,6 +28,10 @@ module.exports = {
         inter700: ['var(--font-inter)'],
         mono: ['var(--font-roboto-mono)'],
       },
+      screens: {
+        'tn': {'max': '297px'},
+        'mxl': {'min': '1440px'}
+      }
     },
   },
   plugins: [],
