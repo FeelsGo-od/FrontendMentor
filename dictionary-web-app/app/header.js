@@ -10,7 +10,7 @@ export default function Header() {
         <Image className="nav_logo tn:w-[1rem] md:w-[2rem]" src={'images/logo.svg'} width={28} height={32} alt="Dictionary app main page" />
         <div className="nav_func flex items-center">
             <div className="nav_func-left">
-            <select id="select_opt-arrow" className={`${inter700.variable} font-inter700 text-[0.875rem] leading-[1.188rem] md:text-[1.125rem] md:leading-normal text-2D appearance-none`}>
+            <select id="select_opt-arrow" className={`${inter700.variable} font-inter700 bg-transparent text-[0.875rem] leading-[1.188rem] md:text-[1.125rem] md:leading-normal text-2D appearance-none`}>
                 <option value="sans-serif">Sans Serif</option>
                 <option value="serif">Serif</option>
                 <option value="mono">Mono</option>

@@ -31,7 +31,7 @@ export default async function Page() {
                     </ul>
                     {wordData.meanings[0].synonyms.length !== 0 && (
                         <div className="pt-[1.5rem] md:pt-[2rem]">
-                            <span className="text-75 text-2D text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem]">Synonyms</span>
+                            <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem]">Synonyms</span>
                             {wordData.meanings[0].synonyms.map(synonym => (
                                 <span className={`${inter700.variable} font-inter700 break-all text-violet text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 ml-[0.84rem]`}>{synonym}{wordData.meanings[0].synonyms.length > 1 && ','}</span>
                             ))}
