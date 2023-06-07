@@ -25,8 +25,9 @@ module.exports = {
         'red': '#FF5252'
       },
       fontFamily: {
-        inter700: ['var(--font-inter)'],
+        sans: ['Inter'],
         mono: ['var(--font-roboto-mono)'],
+        lora: ['var(--font-lora)'],
       },
       screens: {
         'tn': {'max': '297px'},
