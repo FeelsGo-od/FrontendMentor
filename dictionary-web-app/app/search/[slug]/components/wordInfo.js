@@ -7,15 +7,21 @@ import List from '../../../components/list'
 
 export default function WordInfo({ wordData, word }) {
     const handleAudioplay = () => {
-        wordData.phonetics.forEach((item) => {
-            console.log(item)
+        wordData.phonetics.every((item) => {
+            if(item.audio !== '') {
+                let audio = new Audio(item.audio)
+                audio.play()
+                return false;
+            } else {
+                return true
+            }
         })
     }
     if(!wordData) {
         return (
             <div className={`${inter400.variable} font-inter400 text-center main px-10 md:px-[2.438rem] pt-[2.688rem] md:pt-[8.25rem] mxl:px-[22rem]`}>
                 <p className='text-[4rem] leading-[4.688rem]'>😕</p>
-                <h4 className='text-[1.25rem] leading-6 text-2D pt-4 md:pt-[2.75rem]'>No Definitions For "{word}" Found</h4>
+                <h4 className='text-[1.25rem] leading-6 text-2D pt-4 md:pt-[2.75rem] break-all'>No Definitions For "{word}" Found</h4>
                 <p className='text-[1.125rem] leading-6 text-75 pt-4 md:pt-6'>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
             </div>
         )
@@ -25,12 +31,12 @@ export default function WordInfo({ wordData, word }) {
         <div className={`${inter400.variable} font-inter400 main px-10 md:px-[2.438rem] pt-[1.5rem] md:pt-[2.688rem] mxl:px-[22rem]`}>
             <div className="word-display flex items-center flex-wrap justify-between">
                 <div>
-                    <h1 className={`${inter700.variable} font-inter700 text-[2rem] md:text-[4rem] leading-[2.438rem] md:leading-[4.813rem] text-2D`}>{wordData.word}</h1>
+                    <h1 className={`${inter700.variable} font-inter700 text-[2rem] md:text-[4rem] leading-[2.438rem] md:leading-[4.813rem] text-2D break-all`}>{wordData.word}</h1>
                     <p className="text-violet text-[1.125rem] leading-[1.5rem] md:text-[1.5rem] md:leading-[1.813rem] pt-[0.5rem]">{wordData.phonetic}</p>
                 </div>
-                <div onClick={handleAudioplay} className="relative w-[3rem] h-[3rem] md:w-[4.688rem] md:h-[4.688rem]">
-                    <div className="w-[3rem] h-[3rem] rounded-[3rem] md:w-[4.688rem] md:h-[4.688rem] md:rounded-[4.688rem] opacity-25 bg-violet"></div>
-                    <div className="w-0 h-0 border-t-[7.5px] border-t-transparent border-l-[15px] border-l-violet border-b-[7.5px] border-b-transparent absolute-center"></div>
+                <div onClick={handleAudioplay} className="group cursor-pointer relative w-[3rem] h-[3rem] md:w-[4.688rem] md:h-[4.688rem]">
+                    <div className="w-[3rem] h-[3rem] rounded-[3rem] md:w-[4.688rem] md:h-[4.688rem] md:rounded-[4.688rem] opacity-25 group-hover:opacity-100 bg-violet transition delay-50 duration-300 ease-in-out"></div>
+                    <div className="w-0 h-0 border-t-[7.5px] border-t-transparent border-l-[15px] border-l-violet group-hover:border-l-white border-b-[7.5px] border-b-transparent absolute-center transition delay-50 duration-300 ease-in-out"></div>
                 </div>
             </div>
             <div className="block-component pt-[2rem] md:pt-[2.5rem]">
