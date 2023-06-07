@@ -4,12 +4,13 @@ import Image from "next/image"
 import { inter700 } from '../fonts'
 
 export default function SearchForm() {
-    const pathname = window.location.pathname
-    const searchedWord = pathname.split('/')[2]
     const [word, setWord] = useState('')
     const [error, setError] = useState('')
 
     useEffect(() => {
+      const pathname = window.location.pathname
+      const searchedWord = pathname.split('/')[2]
+
       if(searchedWord) {
         setWord(searchedWord)
       }
@@ -21,7 +22,9 @@ export default function SearchForm() {
         if(!word || word === '') {
           setError('Whoops, can’t be empty…')
         } else {
-          window.location.href = `/search/${word}`
+          if (typeof window !== "undefined") {
+            window.location.href = `/search/${word}`
+          }
         }
     }
 

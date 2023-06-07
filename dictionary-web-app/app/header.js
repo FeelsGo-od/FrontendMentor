@@ -8,7 +8,9 @@ import SearchForm from './components/searchForm'
 
 export default function Header() {
     const redirToHome = () => {
-        window.location.href = '/'
+        if (typeof window !== "undefined") {
+            window.location.href = '/'
+        }
     }
   return (
     <header className="px-[1.875rem] md:px-[2.438rem] pt-[1rem] mxl:px-[22rem]">
