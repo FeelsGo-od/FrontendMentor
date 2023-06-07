@@ -6,15 +6,6 @@ export default async function Page({ params }) {
     wordData = wordData[0]
 
     return (
-        <WordInfo wordData={wordData} />
+        <WordInfo wordData={wordData} word={params.slug} />
     )
-
-    // return ( 
-    //     // data !== undefined && data !== '' ? (
-    //     //     <WordInfo wordData={data} />
-    //     // )
-    //     // : (
-    //     //     ''
-    //     // )
-    // )
 }

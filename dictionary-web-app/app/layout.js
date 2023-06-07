@@ -1,7 +1,6 @@
 import './globals.css';
 
 import Header from "./header";
-import Footer from './footer';
 
 export const metadata = {
   title: 'Next.js',
@@ -14,7 +13,6 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   )
