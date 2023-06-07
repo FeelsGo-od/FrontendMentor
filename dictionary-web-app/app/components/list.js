@@ -3,7 +3,6 @@ import React from 'react'
 import { inter700 } from "../fonts"
 
 export default function List({ definition, synonyms, antonyms, example }) {
-    console.log(synonyms, antonyms)
   return (
     <li className="pl-[1.25rem] pt-[0.813rem] ml-[0.813rem] md:ml-[1.375rem] text-2D">
         { definition }
