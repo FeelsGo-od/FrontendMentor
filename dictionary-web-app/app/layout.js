@@ -24,16 +24,19 @@ export const inconsolata = localFont({
 
 // CHECK PREFFERED THEME
 let preferredTheme
+
 if (typeof window !== "undefined") {
   const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)')
+
   if(darkThemeMq.matches) {
     preferredTheme = 'dark'
   } else {
     preferredTheme = 'light'
   }
-}
-if(localStorage.getItem('currentTheme')) {
-  preferredTheme = localStorage.getItem('currentTheme')
+
+  if(localStorage.getItem('currentTheme')) {
+    preferredTheme = localStorage.getItem('currentTheme')
+  }
 }
 
 // CONTEXT initial states
