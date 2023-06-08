@@ -31,9 +31,18 @@ export default function Header() {
                         <Image src={'/images/icon-arrow-down.svg'} width={12} height={6} alt='select website font style' />
                     </div>
                     <div id="select_opt-block" className={`opacity-0 absolute h-0 p-0 ${selectOpened && 'opacity-100 py-6 pr-[4.313rem] pl-6 left-[-2.625rem] h-auto'} bg-white rounded-2xl shadow-[0px_5px_30px_rgba(0,0,0,0.1)] font-bold bg-transparent text-[0.875rem] leading-[1.188rem] md:text-[1.125rem] md:leading-normal text-2D appearance-none mt-[1.125rem]`}>
-                        <p onClick={() => dispatch({ type: 'SANS-SERIF' })} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Sans Serif</p>
-                        <p onClick={() => dispatch({ type: 'SERIF' })} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer pt-4 font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Serif</p>
-                        <p onClick={() => dispatch({ type: 'MONO' })} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer pt-4 font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Mono</p>
+                        <p onClick={() => {
+                            dispatch({ type: 'SANS-SERIF' })
+                            setCurrentFont('Sans Serif')
+                        }} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Sans Serif</p>
+                        <p onClick={() => {
+                            dispatch({ type: 'SERIF' })
+                            setCurrentFont('Serif')
+                        }} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer pt-4 font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Serif</p>
+                        <p onClick={() => {
+                            dispatch({ type: 'MONO' })
+                            setCurrentFont('Mono')
+                        }} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer pt-4 font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Mono</p>
                     </div>
                 </div>
                 <div className="nav_func-right flex items-center border-l border-E9 pl-4 md:pl-[1.625rem] ml-4 md:ml-[1.625rem]">
