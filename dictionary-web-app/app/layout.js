@@ -33,12 +33,12 @@ if (typeof window !== "undefined") {
   } else {
     preferredTheme = 'light'
   }
-}
 
-if(localStorage.getItem('currentTheme')) {
-  preferredTheme = localStorage.getItem('currentTheme')
+  if(localStorage.getItem('currentTheme')) {
+    preferredTheme = localStorage.getItem('currentTheme')
+  }
+  console.log(preferredTheme)
 }
-console.log(preferredTheme)
 
 // CONTEXT initial states
 const initialFont = {
