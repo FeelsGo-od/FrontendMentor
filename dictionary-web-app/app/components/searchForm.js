@@ -28,7 +28,7 @@ export default function SearchForm() {
 
   return (
     <>
-      <form onSubmit={handleSearching} className={`${error && 'border border-red'} nav_search-bar bg-F4 flex items-center rounded-2xl px-6 py-4 mt-6 md:mt-[3.188rem] justify-between`}>
+      <form onSubmit={handleSearching} className={`${error && 'border border-red'} nav_search-bar bg-F4 flex items-center border border-transparent hover:border-violet transition duration-150 ease-in-out rounded-2xl px-6 py-[1.2rem] mt-6 md:mt-[3.188rem] justify-between`}>
         <input type="text" value={word} onChange={(e) => setWord(e.target.value)} className={`font-bold text-2D w-[90%] text-[1rem] leading-[1.188rem] md:text-[1.25rem] bg-transparent focus:outline-none`} placeholder='Write some word...'/>
         <Image onClick={handleSearching} src={'/images/icon-search.svg'} width={16} height={16} alt="search word button" className="cursor-pointer" />
       </form>

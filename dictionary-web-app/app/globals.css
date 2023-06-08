@@ -38,7 +38,7 @@ body {
 }
 
 
-/* THEME STYLES */
+/* DARK / LIGHT - THEME STYLES */
 .light-theme {
   background: #FFFFFF;
 }
@@ -68,8 +68,13 @@ body {
   color: #A445ED;
 }
 
-.dark-theme form {
+.dark-theme form, .dark-theme #select_opt-block  {
   background: #1F1F1F;
+  color: #FFFFFF;
+}
+
+.dark-theme #select_opt-block {
+  box-shadow: 0px 5px 30px #A445ED;
 }
 
 .dark-theme .theme-logo path {

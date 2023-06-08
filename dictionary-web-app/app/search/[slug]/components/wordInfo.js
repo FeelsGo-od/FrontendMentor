@@ -20,7 +20,7 @@ export default function WordInfo({ wordData, word }) {
         return (
             <div className={`font-normal text-center main px-10 md:px-[2.438rem] pt-[2.688rem] md:pt-[8.25rem] mxl:px-[22rem]`}>
                 <p className='text-[4rem] leading-[4.688rem]'>😕</p>
-                <h4 className='text-[1.25rem] leading-6 text-2D pt-4 md:pt-[2.75rem] break-all'>No Definitions For "{word}" Found</h4>
+                <h4 className='text-[1.25rem] leading-6 text-2D pt-4 md:pt-[2.75rem] break-all theme-white'>No Definitions For "{word}" Found</h4>
                 <p className='text-[1.125rem] leading-6 text-75 pt-4 md:pt-6'>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
             </div>
         )
@@ -51,10 +51,10 @@ export default function WordInfo({ wordData, word }) {
                         ))}
                     </ul>
                     {wordData.meanings[0].synonyms.length !== 0 && (
-                        <div className="pt-[1.5rem] md:pt-[2rem]">
+                        <div className="pt-[1.5rem] md:pt-[2.3rem] lg:pt-16">
                             <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem] theme-black">Synonyms</span>
                             {wordData.meanings[0].synonyms.map((synonym, i) => (
-                                <span key={i} className={`font-bold break-all text-violet text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 ml-[0.84rem]`}>{synonym}{wordData.meanings[0].synonyms.length > 1 && ','}</span>
+                                <a key={i} className={`font-bold break-all cursor-pointer hover:underline text-violet text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 ml-[0.84rem]`}>{synonym}{wordData.meanings[0].synonyms.length > 1 && ','}</a>
                             ))}
                         </div>
                     )}
@@ -62,7 +62,7 @@ export default function WordInfo({ wordData, word }) {
                         <div className="pt-[1.5rem] md:pt-[2rem]">
                             <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem] theme-black">Antonyms</span>
                             {wordData.meanings[0].antonyms.map((antonym, i) => (
-                                <span key={i} className={`font-bold break-all text-violet text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 ml-[0.84rem]`}>{antonym}{wordData.meanings[0].antonym.length > 1 && ','}</span>
+                                <a key={i} className={`font-bold break-all cursor-pointer hover:underline text-violet text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 ml-[0.84rem]`}>{antonym}{wordData.meanings[0].antonyms.length > 1 && ','}</a>
                             ))}
                         </div>
                     )}

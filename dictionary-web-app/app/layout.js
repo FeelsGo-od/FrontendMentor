@@ -23,14 +23,17 @@ export const inconsolata = localFont({
 });
 
 // CHECK PREFFERED THEME
-let systemTheme
+let preferredTheme
 if (typeof window !== "undefined") {
   const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)')
   if(darkThemeMq.matches) {
-    systemTheme = 'dark'
+    preferredTheme = 'dark'
   } else {
-    systemTheme = 'light'
+    preferredTheme = 'light'
   }
+}
+if(localStorage.getItem('currentTheme')) {
+  preferredTheme = localStorage.getItem('currentTheme')
 }
 
 // CONTEXT initial states
@@ -38,7 +41,7 @@ const initialFont = {
   font: inter.className
 }
 const initialTheme = {
-  theme: systemTheme
+  theme: preferredTheme
 }
 
 // CONTEXT reducers

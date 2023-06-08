@@ -25,12 +25,12 @@ export default function Header() {
         <nav className="flex justify-between">
             <Image onClick={redirToHome} className="nav_logo tn:w-[1rem] md:w-[2rem]" src={'/images/logo.svg'} width={28} height={32} alt="Dictionary app main page" />
             <div className="nav_func flex items-center relative">
-                <div className="nav_func-left">
+                <div onClick={() => setSelectOpend(!selectOpened)} className="nav_func-left cursor-pointer">
                     <div className='flex'>
-                        <p onClick={() => setSelectOpend(!selectOpened)} className='cursor-pointer text-[0.875rem] md:text-[1.125rem] mr-4 font-bold'>{currentFont}</p>
+                        <p className='cursor-pointer text-[0.875rem] md:text-[1.125rem] mr-4 font-bold'>{currentFont}</p>
                         <Image src={'/images/icon-arrow-down.svg'} width={12} height={6} alt='select website font style' />
                     </div>
-                    <div id="select_opt-arrow" className={`opacity-0 absolute h-0 p-0 ${selectOpened && 'opacity-100 py-6 pr-[4.313rem] pl-6 left-[-2.625rem] h-auto'} bg-white rounded-2xl shadow-[0px_5px_30px_rgba(0,0,0,0.1)] font-bold bg-transparent text-[0.875rem] leading-[1.188rem] md:text-[1.125rem] md:leading-normal text-2D appearance-none mt-[1.125rem]`}>
+                    <div id="select_opt-block" className={`opacity-0 absolute h-0 p-0 ${selectOpened && 'opacity-100 py-6 pr-[4.313rem] pl-6 left-[-2.625rem] h-auto'} bg-white rounded-2xl shadow-[0px_5px_30px_rgba(0,0,0,0.1)] font-bold bg-transparent text-[0.875rem] leading-[1.188rem] md:text-[1.125rem] md:leading-normal text-2D appearance-none mt-[1.125rem]`}>
                         <p onClick={() => dispatch({ type: 'SANS-SERIF' })} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Sans Serif</p>
                         <p onClick={() => dispatch({ type: 'SERIF' })} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer pt-4 font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Serif</p>
                         <p onClick={() => dispatch({ type: 'MONO' })} className={`${selectOpened ? 'block' : 'hidden'} cursor-pointer pt-4 font-bold text-[1.125rem] leading-[1.5rem] hover:text-violet`}>Mono</p>
@@ -39,8 +39,9 @@ export default function Header() {
                 <div className="nav_func-right flex items-center border-l border-E9 pl-4 md:pl-[1.625rem] ml-4 md:ml-[1.625rem]">
                     <div onClick={() => {
                         themeDispatch({ type: currentTheme })
+                        localStorage.setItem('currentTheme', currentTheme === 'DARK' ? 'dark' : 'light')
                         setCurrentTheme(currentTheme === 'LIGHT' ? 'DARK' : 'LIGHT')
-                    }} className="cursor-pointer switch-theme-bg w-10 h-5 bg-75 rounded-xl">
+                    }} className="cursor-pointer switch-theme-bg hover:bg-violet transition duration-150 ease-in-out w-10 h-5 bg-75 rounded-xl">
                         <div className="circle w-3.5 h-3.5 bg-FF rounded-2xl"></div>
                     </div>
                     <svg className="ml-3 md:ml-[1.25rem] theme-logo" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
