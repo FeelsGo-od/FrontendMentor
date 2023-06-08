@@ -5,6 +5,7 @@ import { createContext, useReducer } from 'react';
 
 import './globals.css';
 import Header from "./header";
+import LocalStorage from './localStorage';
 
 // GET FONTS FOR FONT-CONTEXT(below)
 export const inter = localFont({
@@ -23,9 +24,8 @@ export const inconsolata = localFont({
 });
 
 // CHECK PREFFERED THEME
-let preferredTheme
 
-preferredTheme = window?.localStorage?.getItem('currentTheme') ? localStorage.getItem('currentTheme') : null
+let preferredTheme = window?.localStorage?.getItem('currentTheme') ? localStorage.getItem('currentTheme') : null
 
 if(!preferredTheme) {
   if (typeof window !== "undefined") {
@@ -83,6 +83,7 @@ export const ThemeContext = createContext({
 export default function RootLayout({ children }) {
   const [state, dispatch] = useReducer(fontReducer, initialFont)
   const [themeState, themeDispatch] = useReducer(themeReducer, initialTheme)
+
  return (
     <html lang="en" className={`${state.font} ${themeState.theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
       <body>

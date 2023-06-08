@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Image from "next/image"
 
 import SearchForm from './components/searchForm'
@@ -38,7 +38,6 @@ export default function Header() {
                 </div>
                 <div className="nav_func-right flex items-center border-l border-E9 pl-4 md:pl-[1.625rem] ml-4 md:ml-[1.625rem]">
                     <div onClick={() => {
-                        console.log(currentTheme)
                         themeDispatch({ type: currentTheme })
                         localStorage.setItem('currentTheme', currentTheme === 'DARK' ? 'dark' : 'light')
                         setCurrentTheme(currentTheme === 'LIGHT' ? 'DARK' : 'LIGHT')
