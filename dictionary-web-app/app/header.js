@@ -12,7 +12,7 @@ export default function Header() {
 
     const [currentFont, setCurrentFont] = useState('Sans Serif')
     const [selectOpened, setSelectOpend] = useState(false)
-    const [currentTheme, setCurrentTheme] = useState(themeState.theme === 'light' ? 'DARK' : 'LIGHT')
+    let locTheme
 
     // WEBSITE LOGO CLICK
     const redirToHome = () => {
@@ -38,9 +38,9 @@ export default function Header() {
                 </div>
                 <div className="nav_func-right flex items-center border-l border-E9 pl-4 md:pl-[1.625rem] ml-4 md:ml-[1.625rem]">
                     <div onClick={() => {
-                        themeDispatch({ type: currentTheme })
-                        localStorage.setItem('currentTheme', currentTheme === 'DARK' ? 'dark' : 'light')
-                        setCurrentTheme(currentTheme === 'LIGHT' ? 'DARK' : 'LIGHT')
+                        locTheme = localStorage.getItem('currentTheme')
+                        themeDispatch({ type: locTheme === 'dark' ? 'LIGHT' : 'DARK'})
+                        localStorage.setItem('currentTheme', locTheme === 'dark' ? 'light' : 'dark')
                     }} className="cursor-pointer switch-theme-bg hover:bg-violet transition duration-150 ease-in-out w-10 h-5 bg-75 rounded-xl">
                         <div className="circle w-3.5 h-3.5 bg-FF rounded-2xl"></div>
                     </div>

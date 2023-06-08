@@ -1,11 +1,10 @@
 'use client'
 
 import localFont from 'next/font/local';
-import { createContext, useReducer } from 'react';
+import { createContext, useEffect, useReducer, useState } from 'react';
 
 import './globals.css';
 import Header from "./header";
-import LocalStorage from './localStorage';
 
 // GET FONTS FOR FONT-CONTEXT(below)
 export const inter = localFont({
@@ -23,27 +22,12 @@ export const inconsolata = localFont({
   display: 'swap',
 });
 
-// CHECK PREFFERED THEME
-
-let preferredTheme = window?.localStorage?.getItem('currentTheme') ? localStorage.getItem('currentTheme') : null
-
-if(!preferredTheme) {
-  if (typeof window !== "undefined") {
-    const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)')
-    if(darkThemeMq.matches) {
-      preferredTheme = 'dark'
-    } else {
-      preferredTheme = 'light'
-    }
-  }
-}
-
 // CONTEXT initial states
 const initialFont = {
   font: inter.className
 }
 const initialTheme = {
-  theme: preferredTheme
+  theme: 'light'
 }
 
 // CONTEXT reducers
@@ -83,6 +67,24 @@ export const ThemeContext = createContext({
 export default function RootLayout({ children }) {
   const [state, dispatch] = useReducer(fontReducer, initialFont)
   const [themeState, themeDispatch] = useReducer(themeReducer, initialTheme)
+  let preferredTheme
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const localTheme =  window.localStorage.getItem('currentTheme')
+      preferredTheme = localTheme ? localTheme : null
+      if(!preferredTheme) {
+        const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)')
+        if(darkThemeMq.matches) {
+          preferredTheme = 'dark'
+        } else {
+          preferredTheme = 'light'
+        }
+      }
+
+      themeDispatch({ type: !preferredTheme ? 'LIGHT' : preferredTheme === 'light' ? 'LIGHT' : 'DARK' })
+    }
+  }, [])
 
  return (
     <html lang="en" className={`${state.font} ${themeState.theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
