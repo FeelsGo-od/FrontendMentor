@@ -94,8 +94,8 @@ I am goint to learn nextjs docs, and tailwind, because I tried them for the firs
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [andrewdevvv.com](https://www.andrewdevvv.com/)
+- Frontend Mentor - [@FeelsGo-od](https://www.frontendmentor.io/profile/FeelsGo-od)
 
 ## Acknowledgments
 
