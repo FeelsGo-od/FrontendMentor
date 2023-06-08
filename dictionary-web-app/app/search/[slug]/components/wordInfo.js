@@ -18,7 +18,7 @@ export default function WordInfo({ wordData, word }) {
     }
     if(!wordData) {
         return (
-            <div className={`font-normal text-center main px-10 md:px-[2.438rem] pt-[2.688rem] md:pt-[8.25rem] mxl:px-[22rem]`}>
+            <div className={`font-normal text-center main px-10 bmd:px-[1.5rem] md:px-[2.438rem] pt-[2.688rem] md:pt-[8.25rem] mxl:px-[22rem]`}>
                 <p className='text-[4rem] leading-[4.688rem]'>😕</p>
                 <h4 className='text-[1.25rem] leading-6 text-2D pt-4 md:pt-[2.75rem] break-all theme-white'>No Definitions For "{word}" Found</h4>
                 <p className='text-[1.125rem] leading-6 text-75 pt-4 md:pt-6'>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
@@ -27,7 +27,7 @@ export default function WordInfo({ wordData, word }) {
     }
   return (
     <>
-        <div className={`font-normal main px-10 md:px-[2.438rem] pt-[1.5rem] md:pt-[2.688rem] mxl:px-[22rem]`}>
+        <div className={`font-normal main px-10 bmd:px-[1.5rem] md:px-[2.438rem] pt-[1.5rem] md:pt-[2.688rem] mxl:px-[22rem]`}>
             <div className="word-display flex items-center flex-wrap justify-between">
                 <div>
                     <h1 className={`font-bold text-[2rem] md:text-[4rem] leading-[2.438rem] md:leading-[4.813rem] text-2D break-all`}>{wordData.word}</h1>
@@ -38,7 +38,7 @@ export default function WordInfo({ wordData, word }) {
                     <div className="w-0 h-0 border-t-[7.5px] border-t-transparent border-l-[15px] border-l-violet group-hover:border-l-white border-b-[7.5px] border-b-transparent absolute-center transition delay-50 duration-300 ease-in-out"></div>
                 </div>
             </div>
-            <div className="block-component pt-[2rem] md:pt-[2.5rem]">
+            <div className="block-component pt-[2rem] bmd:pt-[1.75rem] md:pt-[2.5rem]">
                 <div className="flex justify-between items-center">
                     <span className={`font-sans font-bold text-2D text[1.125rem] leading-[1.375rm] md:text-[1.5rem] md:leading-[1.813rem]`}>noun</span>
                     <div className="w-full h-px bg-E9 ml-5"></div>
@@ -69,7 +69,7 @@ export default function WordInfo({ wordData, word }) {
                 </div>
             </div>
             {wordData.meanings[1] && (
-                <div className="block-component pt-[2rem] md:pt-[2.5rem]">
+                <div className="block-component pt-[2rem] bmd:pt-[1.75rem] md:pt-[2.5rem]">
                     <div className="flex justify-between items-center">
                         <span className={`font-sans font-bold text-2D text[1.125rem] leading-[1.375rm] md:text-[1.5rem] md:leading-[1.813rem]`}>verb</span>
                         <div className="w-full h-px bg-E9 ml-5"></div>
@@ -85,7 +85,7 @@ export default function WordInfo({ wordData, word }) {
                 </div>
             )}
         </div>
-        <footer className="px-10 md:px-[2.5rem] pt-[2rem] mxl:px-[22rem] pb-[5.313rem] md:pb-[7.375rem] mxl:pb-[7.75rem]">
+        <footer className="px-10 bmd:px-[1.5rem] md:px-[2.5rem] pt-[2rem] mxl:px-[22rem] pb-[5.313rem] md:pb-[7.375rem] mxl:pb-[7.75rem]">
             <div className="w-full bg-E9 h-px"></div>
                 <ul className="flex flex-wrap md:items-center pt-[1.5rem]">
                     <li className="text-75 text-[0.875rem] leading-[1.375rem] underline theme-black">Source</li>

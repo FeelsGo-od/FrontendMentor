@@ -1,7 +1,7 @@
 'use client'
 
 import localFont from 'next/font/local';
-import { createContext, useEffect, useReducer, useState } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
 
 import './globals.css';
 import Header from "./header";

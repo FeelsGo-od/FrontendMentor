@@ -21,7 +21,7 @@ export default function Header() {
         }
     }
   return (
-    <header className="px-[1.875rem] md:px-[2.438rem] pt-[1rem] mxl:px-[22rem]">
+    <header className="px-[1.875rem] bmd:px-[1.4rem] md:px-[2.438rem] pt-[1rem] mxl:px-[22rem]">
         <nav className="flex justify-between">
             <Image onClick={redirToHome} className="nav_logo tn:w-[1rem] md:w-[2rem]" src={'/images/logo.svg'} width={28} height={32} alt="Dictionary app main page" />
             <div className="nav_func flex items-center relative">

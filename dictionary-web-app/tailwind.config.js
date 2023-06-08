@@ -31,6 +31,7 @@ module.exports = {
       },
       screens: {
         'tn': {'max': '297px'},
+        'bmd': {'max': '767px'},
         'mxl': {'min': '1440px'}
       }
     },

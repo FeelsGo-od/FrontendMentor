@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function List({ definition, synonyms, antonyms, example }) {
   return (
-    <li className="pl-[0.8rem] pt-[0.813rem] ml-[0.813rem] md:ml-[2.205rem] text-2D first:pt-[1.5rem]">
+    <li className="pl-[0.8rem] pt-[0.813rem] ml-[0.813rem] md:ml-[2.205rem] text-2D first:pt-[1.5rem] bmd:first:pt-[0.65rem] bmd:pt-[0.65rem]">
         { definition }
 
         {example ? (
