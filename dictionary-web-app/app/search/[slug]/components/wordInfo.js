@@ -52,7 +52,7 @@ export default function WordInfo({ wordData, word }) {
                     </ul>
                     {wordData.meanings[0].synonyms.length !== 0 && (
                         <div className="pt-[1.5rem] md:pt-[2rem]">
-                            <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem]">Synonyms</span>
+                            <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem] theme-black">Synonyms</span>
                             {wordData.meanings[0].synonyms.map((synonym, i) => (
                                 <span key={i} className={`font-bold break-all text-violet text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 ml-[0.84rem]`}>{synonym}{wordData.meanings[0].synonyms.length > 1 && ','}</span>
                             ))}
@@ -60,7 +60,7 @@ export default function WordInfo({ wordData, word }) {
                     )}
                     {wordData.meanings[0].antonyms.length !== 0 && (
                         <div className="pt-[1.5rem] md:pt-[2rem]">
-                            <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem]">Antonyms</span>
+                            <span className="text-75 text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 mr-[0.66rem] theme-black">Antonyms</span>
                             {wordData.meanings[0].antonyms.map((antonym, i) => (
                                 <span key={i} className={`font-bold break-all text-violet text-[1rem] leading-[1.188rem] md:text-[1.25rem] md:leading-6 ml-[0.84rem]`}>{antonym}{wordData.meanings[0].antonym.length > 1 && ','}</span>
                             ))}
@@ -88,8 +88,8 @@ export default function WordInfo({ wordData, word }) {
         <footer className="px-10 md:px-[2.5rem] pt-[2rem] mxl:px-[22rem] pb-[5.313rem] md:pb-[7.375rem] mxl:pb-[7.75rem]">
             <div className="w-full bg-E9 h-px"></div>
                 <ul className="flex flex-wrap md:items-center pt-[1.5rem]">
-                    <li className="text-75 text-[0.875rem] leading-[1.375rem] underline">Source</li>
-                    <li className="w-full md:w-auto md:ml-[1.25rem]"><a href="/" className="link-red break-all underline text-2D text-[0.875rem] leading-[1.063rem]">https://en.wiktionary.org/wiki/{word}</a></li>
+                    <li className="text-75 text-[0.875rem] leading-[1.375rem] underline theme-black">Source</li>
+                    <li className="w-full md:w-auto md:ml-[1.25rem]"><a href="/" className="link-red break-all underline text-2D text-[0.875rem] leading-[1.063rem] theme-white">https://en.wiktionary.org/wiki/{word}</a></li>
                 </ul>
         </footer>
     </>

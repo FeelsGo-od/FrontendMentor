@@ -5,8 +5,8 @@ import { createContext, useReducer } from 'react';
 
 import './globals.css';
 import Header from "./header";
-// import { CounterContext } from '@/context/counter';
 
+// GET FONTS FOR FONT-CONTEXT(below)
 export const inter = localFont({
   src: './fonts/inter/Inter-VariableFont_slnt,wght.ttf',
   display: 'swap',
@@ -22,11 +22,27 @@ export const inconsolata = localFont({
   display: 'swap',
 });
 
-const initialState = {
-  font: inter.className
+// CHECK PREFFERED THEME
+let systemTheme
+if (typeof window !== "undefined") {
+  const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)')
+  if(darkThemeMq.matches) {
+    systemTheme = 'dark'
+  } else {
+    systemTheme = 'light'
+  }
 }
 
-const reducer = (state, action) => {
+// CONTEXT initial states
+const initialFont = {
+  font: inter.className
+}
+const initialTheme = {
+  theme: systemTheme
+}
+
+// CONTEXT reducers
+const fontReducer = (state, action) => {
   switch (action.type) {
     case "SANS-SERIF":
       return { font: inter.className }
@@ -38,21 +54,39 @@ const reducer = (state, action) => {
       return state
   }
 }
+const themeReducer = (state, action) => {
+  switch (action.type) {
+    case "DARK":
+      return { theme: 'dark' }
+    case "LIGHT":
+      return { theme: 'light' }
+    default:
+      return state
+  }
+}
 
-export const CounterContext = createContext({
-  state: initialState,
+// CONTEXT creation
+export const FontContext = createContext({
+  state: initialFont,
+  dispatch: () => null
+})
+export const ThemeContext = createContext({
+  state: initialTheme,
   dispatch: () => null
 })
  
 export default function RootLayout({ children }) {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(fontReducer, initialFont)
+  const [themeState, themeDispatch] = useReducer(themeReducer, initialTheme)
  return (
-    <html lang="en" className={state.font}>
+    <html lang="en" className={`${state.font} ${themeState.theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
       <body>
-        <CounterContext.Provider value={{ state, dispatch }}>
-          <Header />
-          {children}
-        </CounterContext.Provider>
+        <ThemeContext.Provider value={{ themeState, themeDispatch }}>
+          <FontContext.Provider value={{ state, dispatch }}>
+            <Header />
+            {children}
+          </FontContext.Provider>
+        </ThemeContext.Provider>
       </body>
     </html>
   )

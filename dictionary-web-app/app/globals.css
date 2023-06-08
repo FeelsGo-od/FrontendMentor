@@ -37,11 +37,53 @@ body {
   margin: auto auto;
 }
 
-/* #select_opt-arrow {
-  background-image: url('../public/images/icon-arrow-down.svg');
-  background-repeat: no-repeat;
-  cursor: pointer;
-  background-position: right;
-  padding-right: 22px;
-  background-size: 0.75rem;
-} */
+
+/* THEME STYLES */
+.light-theme {
+  background: #FFFFFF;
+}
+
+.light-theme .switch-theme-bg .circle {
+  position: relative;
+  top: 3px;
+  right: 0px;
+  transform: translate(3px, 0);
+  transition: transform 0.3s ease;
+}
+
+.dark-theme {
+  background: #050505;
+  color: #FFFFFF;
+}
+
+.dark-theme h1, .dark-theme input, .dark-theme span, .dark-theme li, .dark-theme .theme-white {
+  color: #FFFFFF;
+}
+
+.dark-theme .theme-black {
+  color: #757575;
+}
+
+.dark-theme .text-violet {
+  color: #A445ED;
+}
+
+.dark-theme form {
+  background: #1F1F1F;
+}
+
+.dark-theme .theme-logo path {
+  stroke: #A445ED;
+}
+
+.dark-theme .switch-theme-bg {
+  background: #A445ED;
+}
+
+.dark-theme .switch-theme-bg .circle {
+  position: relative;
+  top: 3px;
+  right: 0px;
+  transform: translate(22px, 0);
+  transition: transform 0.3s ease;
+}
