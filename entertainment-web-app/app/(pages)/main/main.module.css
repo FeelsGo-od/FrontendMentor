@@ -1,0 +1,6 @@
+@media (min-width: 769px) {
+    .main {
+        margin-left: 8.875rem;
+        overflow-y: hidden;
+    }
+}
