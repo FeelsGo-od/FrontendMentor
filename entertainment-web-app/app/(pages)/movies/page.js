@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Category from '@/app/components/Category'
+import Category from '@/app/components/category'
 
 export default function Movies() {
   return (
