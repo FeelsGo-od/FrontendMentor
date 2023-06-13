@@ -91,3 +91,9 @@
         font-size: 2rem;
     }
 }
+
+@media (max-width: 290px) {
+    .searchInput::-webkit-input-placeholder {
+        font-size: 0.9rem;
+    }
+}
