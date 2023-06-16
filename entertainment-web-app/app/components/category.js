@@ -6,7 +6,7 @@ import MovieItem from './movieItem'
 
 export default function Category({ name, category, movies, type }) {
   return (
-    <div className={`${styles.categoryCont} pd-container`}>
+    <div className={`${styles.categoryCont} pd-container ${category === 'recommended' ? styles.containerRecommended : ''}`}>
         <h1 className={styles.categoryTitle}>{name}</h1>
         <div className={`${styles[type + 'Content']}`}>
           <div className={`${styles[type + 'Container']}`}>
@@ -16,7 +16,9 @@ export default function Category({ name, category, movies, type }) {
               ))
             )
             : (
-              movies.map((movie, i) => (
+              movies.map((movie, i) => movie['isTrending'] ? (
+                ''
+              ) : (
                 <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} />
               ))
             ) }
