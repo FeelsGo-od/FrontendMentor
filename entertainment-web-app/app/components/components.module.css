@@ -181,14 +181,12 @@
         letter-spacing: 0;
     }
     .blocksContainer {
-        grid-template-columns: repeat(auto-fit, minmax(10.26rem, 13.75rem));
+        grid-template-columns: repeat(3, minmax(10.26rem, 13.75rem));
         gap: 1.87rem;
+        overflow-x: hidden;
     }
     .blocksContent {
         margin-top: 1.438rem;
-    }
-    .blocksContent .movieItem {
-        width: 100%;
     }
     .carouselContent {
         margin-top: 1.6rem
@@ -247,9 +245,8 @@
     .blocksContainer .movieCategoryTitle span {
         margin-left: 1px;
     }
-    .blocksContainer .img {
-        width: 100%;
-        height: auto;
+    .blocksContainer .movieItem > img {
+        max-width: 100%;
     }
 
 }
@@ -303,6 +300,51 @@
     .movieCategoryTitle img {
         left: -3px;
     }
+    .blocksContainer {
+        grid-template-columns: repeat(4, minmax(6.875rem, 19.25rem));
+    }
+    .blocksContainer .movieItem > img {  /* refactoring  */
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+    }
+}
+
+@media (min-width: 1441px) {
+    .blocksContainer {
+        grid-template-columns: repeat(4, minmax(6.875rem, 37.25rem));
+    }
+    .blocksContainer .movieItem > img {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+    }
+}
+
+@media (max-width: 720px) {
+    .blocksContainer {
+        grid-template-columns: repeat(2, minmax(13.26rem, 20.75rem));
+    }
+    .blocksContainer .movieItem > img {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+    }
+}
+
+@media (max-width: 512px) {
+    .blocksContainer {
+        grid-template-columns: repeat(2, minmax(8.26rem, 13.75rem));
+    }
+}
+
+@media (max-width: 432px) {
+    .blocksContainer {
+        grid-template-columns: repeat(2, minmax(5.26rem, 9.75rem));
+    }
+    .blocksContainer .movieInfo p {
+        font-size: 0.7rem;
+    }
 }
 
 @media (max-width: 375px) {
@@ -315,6 +357,12 @@
     }
     .blocksContent {
         margin-top: 1.4rem;
+    }
+}
+
+@media (max-width: 318px) {
+    .blocksContainer .movieInfo p {
+        font-size: 0.55rem;
     }
 }
 
