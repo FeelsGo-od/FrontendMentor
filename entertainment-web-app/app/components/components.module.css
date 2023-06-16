@@ -340,7 +340,7 @@
 
 @media (max-width: 432px) {
     .blocksContainer {
-        grid-template-columns: repeat(2, minmax(5.26rem, 9.75rem));
+        grid-template-columns: repeat(2, minmax(5.26rem, 11.75rem));
     }
     .blocksContainer .movieInfo p {
         font-size: 0.7rem;
