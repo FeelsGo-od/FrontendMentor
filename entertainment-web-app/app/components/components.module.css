@@ -110,7 +110,7 @@
 }
 .blocksContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10.25rem, 6.875rem));
+    grid-template-columns: repeat(auto-fit, minmax(6.875rem, 10.25rem));
     gap: 0.938rem;
     overflow-y: hidden;
     row-gap: 0.6rem;
@@ -181,7 +181,7 @@
         letter-spacing: 0;
     }
     .blocksContainer {
-        grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(10.26rem, 13.75rem));
         gap: 1.87rem;
     }
     .blocksContent {
@@ -249,7 +249,7 @@
     }
     .blocksContainer .img {
         width: 100%;
-        object-fit: cover;
+        height: auto;
     }
 
 }
