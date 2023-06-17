@@ -114,6 +114,7 @@
     gap: 0.938rem;
     overflow-y: hidden;
     row-gap: 0.6rem;
+    padding-bottom: 53px;
 }
 .blocksContainer .movieDescr {
     position: static;

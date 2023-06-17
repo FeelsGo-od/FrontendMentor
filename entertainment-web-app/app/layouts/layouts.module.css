@@ -34,6 +34,9 @@
     position: relative;
     top: 2px;
 }
+.navLink.active path {
+    fill: #fff;
+}
 .profile {
     color: transparent;
     border: 2px solid white;
