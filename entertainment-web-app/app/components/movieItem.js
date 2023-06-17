@@ -39,7 +39,7 @@ export default function MovieItem({ type, title, year, category, rating, thumbna
                 <div className={styles.movieInfo}>
                     <p>{year}</p>
                     <div className={styles.dot}></div>
-                    <p className={styles.movieCategoryTitle}><Image src={`/assets/icon-category-${category.split(' ')[0].toLowerCase()}.svg`} width={12}  height={12} alt='movie category'/> <span>{category}</span></p>
+                    <p className={styles.movieCategoryTitle}><Image src={`/assets/icon-category-${category.split(' ')[0].toLowerCase()}.svg`} width={12}  height={12} quality={100} priority={true} alt='movie category'/> <span>{category}</span></p>
                     <div className={styles.dot}></div>
                     <p className={styles.rating}>{rating}</p>
                 </div>
