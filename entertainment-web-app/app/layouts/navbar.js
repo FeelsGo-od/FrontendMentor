@@ -3,13 +3,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Link } from 'next/link'
 
 import styles from './layouts.module.css'
 
 export default function Navbar() {
   const pathname = usePathname()
-  console.log(pathname)
 
   return (
     <header className={`${styles.sidebar} pd-container bg-semidblue sp-between flex`}>
