@@ -317,18 +317,35 @@
         bottom: 1.7rem;
         left: 1.5rem;
     }
-    .movieTitle {
+    .movieTitle  {
         font-size: 1.5rem;
+        letter-spacing: normal;
+    }
+    .blocksContainer .movieTitle {
+        font-size: 1.1rem;
         letter-spacing: normal;
     }
     .movieInfo {
         top: -4px;
     }
-    .movieInfo p {
+    .blocksContainer .movieInfo {
+        top: -2px;
+    }
+    .movieInfo p, .blocksContainer .movieInfo p {
         font-size: 0.938rem;
     }
-    .dot {
+    .dot, .blocksContainer .dot {
         margin: auto 8px;
+    }
+    .movieCategoryTitle span {
+        margin-left: 2px;
+    }
+    .movieCategoryTitle img, .blocksContainer .movieCategoryTitle img {
+        width: 12px;
+        height: 12px;
+    }
+    .blocksContainer .movieDescr {
+        margin-top: 2px;
     }
     .movieCategoryTitle img {
         left: -3px;
@@ -338,9 +355,10 @@
     }
     .blocksContainer {
         grid-template-columns: repeat(4, minmax(6.875rem, 19.25rem));
+        row-gap: 1.7rem;
     }
     .blocksContainer .movieItem > img {  /* refactoring  */
-        width: 100%;
+        width: 94%;
         height: auto;
         object-fit: fill;
     }
