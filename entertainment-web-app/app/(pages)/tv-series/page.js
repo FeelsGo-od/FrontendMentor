@@ -1,12 +1,15 @@
 import React from 'react'
 
 import Category from '@/app/components/category'
+import SearchInput from '@/app/components/searchInput'
+import movies from '@/app/json/data.json'
+import styles from './tv-series.module.css'
 
 export default function TvSeries() {
-  let categoryData
   return (
-    <div>
-      {/* <Category category={'TV Series'} data={{ categoryData }} type={'blocks'} /> */}
+    <div className={styles.main}>
+      <SearchInput />
+      <Category name={'TV Series'} category={'TV Series'} movies={movies} type={'blocks'} />
     </div>
   )
 }

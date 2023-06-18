@@ -45,7 +45,7 @@ export default function MovieItem({ type, title, year, category, rating, thumbna
                 </div>
                 <p className={styles.movieTitle}>{title}</p>
             </div>
-            <Image className={styles.img} src={imgSrc.slice(1)} width={imgSize.width} height={imgSize.height} alt='movie thumbnail' />
+            <Image className={styles.img} src={imgSrc.slice(1)} width={imgSize.width} height={imgSize.height} quality={100} priority={true} alt='movie thumbnail' />
         </div>
     )
 }

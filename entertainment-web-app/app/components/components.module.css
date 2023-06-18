@@ -107,6 +107,10 @@
 }
 .blocksContent {
     display: block;
+    margin-top: 1.5rem;
+}
+.containerRecommended .blocksContent {
+    margin-top: 2rem;
 }
 .blocksContainer {
     display: grid;
@@ -212,6 +216,9 @@
         letter-spacing: -0.1px;
         font-size: 1.5rem;
     }
+    .containerRecommended .blocksContent {
+        margin-top: 1.5rem;
+    }
     .blocksContainer .movieTitle {
         font-style: normal;
         font-weight: 500;
@@ -302,6 +309,9 @@
     .movieCategoryTitle img {
         left: -3px;
     }
+    .blocksContent {
+        margin-top: 2.375rem;
+    }
     .blocksContainer {
         grid-template-columns: repeat(4, minmax(6.875rem, 19.25rem));
     }
@@ -356,6 +366,9 @@
     }
     .containerRecommended {
         margin-top: 0.7rem;
+    }
+    .containerRecommended .blocksContent {
+        margin-top: 1.5rem;
     }
     .blocksContent {
         margin-top: 1.4rem;

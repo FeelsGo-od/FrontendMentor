@@ -1,17 +1,18 @@
 import React from 'react'
 
+import SearchInput from '@/app/components/searchInput'
+import Category from '@/app/components/category'
+import movies from '@/app/json/data.json'
+import styles from './bookmarked.module.css'
+
 export default function Bookmarked() {
   return (
     <div>
-        Search for bookmarked shows
-  
-        Bookmarked Movies
-
-        {/* Display bookmarked movies */}
-
-        Bookmarked TV Series
-
-        {/* Display bookmarked TV series */}
+      <div className={styles.main}>
+        <SearchInput />
+        <Category name={'Bookmarked Movies'} category={'Bookmarked Movie'} movies={movies} type={'blocks'} />
+        <Category name={'Bookmarked TV Series'} category={'Bookmarked TV Series'} movies={movies} type={'blocks'} />
+      </div>
     </div>
   )
 }
