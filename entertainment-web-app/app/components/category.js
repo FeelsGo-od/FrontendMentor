@@ -1,13 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './components.module.css'
 import MovieItem from './movieItem'
 
 export default function Category({ name, category, movies, type }) {
   let categoryMovies
+  const [bookmarkedMovies, setBookmarkedMovies] = useState()
 
-  const categoryIsFound = movies.some((movie) => {
+  const categoryIsFound = movies && movies.some((movie) => {
     if(movie.category === category) return true;
     return false;
   })
@@ -16,8 +17,21 @@ export default function Category({ name, category, movies, type }) {
     categoryMovies = movies.filter((movie) => movie.category === category);
   }
 
-  const bookmarkedMovies = movies.filter((movie) => movie.isBookmarked)
-  const currentCategory = category.slice(11)
+  const currentCategory = movies && category.slice(11)
+  useEffect(() => {
+    setBookmarkedMovies(JSON.parse(localStorage.getItem('bookmarkedMovies')))
+  }, [])
+
+  // refactor it
+  let bookmarkedCategoryIsFound
+  if(bookmarkedMovies) {
+    bookmarkedCategoryIsFound = bookmarkedMovies.some((movie) => {
+      if(movie.category === currentCategory) {
+        return true
+      }
+      return false
+    })
+  }
 
   return (
     <div className={`${styles.categoryCont} pd-container ${category === 'recommended' ? styles.containerRecommended : ''}`}>
@@ -26,22 +40,24 @@ export default function Category({ name, category, movies, type }) {
           <div className={`${styles[type + 'Container']}`}>
             { category.startsWith('is') ? (
               movies.map((movie, i) => movie[category] && (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['trending']} isBookmarked={movie.isBookmarked} />
+                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['trending']} movieObj={movie} />
               ))
             )
             : category.split(' ')[0] === 'Bookmarked' ? (
-              bookmarkedMovies.map((movie, i) => movie['category'] === currentCategory && (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} isBookmarked={movie.isBookmarked} />
-              ))
-            ) // refactor category and isCategory to be scalable, and combine all MovieItem props into one object
+              bookmarkedMovies && bookmarkedMovies.length !== 0 && bookmarkedMovies.some(movie => movie.category === currentCategory) ? (
+                bookmarkedMovies.map((movie, i) => movie['category'] === currentCategory && (
+                  <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} movieObj={movie} />
+                ))
+              ) : `There are no bookmarked movies in ${currentCategory} category`
+            ) // refactor category and isCategory to be scalable & combine all MovieItem props into one object
             : categoryIsFound ? (
               categoryMovies.map((movie, i) => (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} isBookmarked={movie.isBookmarked} />
+                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} movieObj={movie} />
               ))
             )
             : (
               movies.map((movie, i) => !movie['isTrending'] && (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} isBookmarked={movie.isBookmarked} />
+                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} movieObj={movie} />
               ))
             ) }
           </div>

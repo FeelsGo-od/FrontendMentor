@@ -62,7 +62,7 @@
 }
 .movieBookmark {
     position: absolute;
-    right: 1rem;
+    right: 2rem;
     top: 1rem;
     width: 32px;
     height: 32px;
@@ -417,7 +417,7 @@
     }
     .movieBookmark {
         position: absolute;
-        right: 0.5rem;
+        right: 1.5rem;
         top: 0.5rem;
         width: 32px;
         height: 32px;

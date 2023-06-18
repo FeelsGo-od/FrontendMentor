@@ -4,10 +4,11 @@ import Image from 'next/image'
 
 import styles from './components.module.css'
 
-export default function MovieItem({ type, title, year, category, rating, thumbnail, isBookmarked }) {
+export default function MovieItem({ type, title, year, category, rating, thumbnail, movieObj }) {
     const [imgSrc, setImgSrc] = useState('./assets/loading.gif')
     const [imgSize, setImgSize] = useState({ width: 0, height: 0 })
     const [bookmarked, setBookmarked] = useState('empty')
+    let bookmarkedMovies;
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -33,12 +34,50 @@ export default function MovieItem({ type, title, year, category, rating, thumbna
             }
         }
 
-        if(isBookmarked) setBookmarked('full')
+        bookmarkedMovies = JSON.parse(localStorage.getItem('bookmarkedMovies'))
+        if(bookmarkedMovies) {
+            const movieFound = bookmarkedMovies.some((movie) => {
+                if(movie.title === title) {
+                    return true
+                }
+                return false
+            })
+            movieFound ? setBookmarked('full') : setBookmarked('empty')
+        } else {
+            setBookmarked('full')
+        }
     }, [])
+
+    const handleBookmarkChange = () => {
+        bookmarked === 'empty' ? setBookmarked('full') : setBookmarked('empty')
+
+        bookmarkedMovies = JSON.parse(localStorage.getItem('bookmarkedMovies'))
+
+        if(bookmarkedMovies) {
+            const movieFound = bookmarkedMovies.some((movie) => {
+                if(movie.title === title) {
+                    return true
+                }
+                return false
+            })
+
+            if(movieFound) {
+                bookmarkedMovies = bookmarkedMovies.filter((movie) => movie.title !== movieObj.title)
+            } else {
+                bookmarkedMovies.push(movieObj)
+            }
+
+            localStorage.setItem('bookmarkedMovies', JSON.stringify(bookmarkedMovies))
+        } else {
+            bookmarkedMovies = []
+            bookmarkedMovies.push(movieObj)
+            localStorage.setItem('bookmarkedMovies', JSON.stringify(bookmarkedMovies))
+        }
+    }
 
     return (
         <div className={styles.movieItem}>
-            <div className={styles.movieBookmark}>
+            <div onClick={handleBookmarkChange} className={styles.movieBookmark}>
                 <div className={styles.movieBookmarkBg}></div>
                 <Image className={styles.movieBookmarkImg} src={`/assets/icon-bookmark-${bookmarked}.svg`} width={11.67} height={14} alt='add to bookmark button' />
             </div>
