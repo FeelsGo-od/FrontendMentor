@@ -4,9 +4,10 @@ import Image from 'next/image'
 
 import styles from './components.module.css'
 
-export default function MovieItem({ type, title, year, category, rating, thumbnail }) {
+export default function MovieItem({ type, title, year, category, rating, thumbnail, isBookmarked }) {
     const [imgSrc, setImgSrc] = useState('./assets/loading.gif')
     const [imgSize, setImgSize] = useState({ width: 0, height: 0 })
+    const [bookmarked, setBookmarked] = useState('empty')
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -31,10 +32,16 @@ export default function MovieItem({ type, title, year, category, rating, thumbna
                 }
             }
         }
+
+        if(isBookmarked) setBookmarked('full')
     }, [])
 
     return (
         <div className={styles.movieItem}>
+            <div className={styles.movieBookmark}>
+                <div className={styles.movieBookmarkBg}></div>
+                <Image className={styles.movieBookmarkImg} src={`/assets/icon-bookmark-${bookmarked}.svg`} width={11.67} height={14} alt='add to bookmark button' />
+            </div>
             <div className={styles.movieDescr}>
                 <div className={styles.movieInfo}>
                     <p>{year}</p>

@@ -26,22 +26,22 @@ export default function Category({ name, category, movies, type }) {
           <div className={`${styles[type + 'Container']}`}>
             { category.startsWith('is') ? (
               movies.map((movie, i) => movie[category] && (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['trending']} />
+                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['trending']} isBookmarked={movie.isBookmarked} />
               ))
             )
             : category.split(' ')[0] === 'Bookmarked' ? (
               bookmarkedMovies.map((movie, i) => movie['category'] === currentCategory && (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} />
+                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} isBookmarked={movie.isBookmarked} />
               ))
-            ) // refactor category and isCategory to be scalable
+            ) // refactor category and isCategory to be scalable, and combine all MovieItem props into one object
             : categoryIsFound ? (
               categoryMovies.map((movie, i) => (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} />
+                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} isBookmarked={movie.isBookmarked} />
               ))
             )
             : (
               movies.map((movie, i) => !movie['isTrending'] && (
-                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} />
+                <MovieItem type={type} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} isBookmarked={movie.isBookmarked} />
               ))
             ) }
           </div>
