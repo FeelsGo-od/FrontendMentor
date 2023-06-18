@@ -62,7 +62,7 @@
 }
 .movieBookmark {
     position: absolute;
-    right: 2rem;
+    right: 1rem;
     top: 1rem;
     width: 32px;
     height: 32px;
@@ -281,7 +281,10 @@
         max-width: 100%;
         height: auto;
     }
-
+    .movieBookmark {
+        right: 0.5rem;
+        top: 0.5rem;
+    }
 }
 
 @media (min-width: 769px) {
@@ -362,6 +365,10 @@
         height: auto;
         object-fit: fill;
     }
+    .movieBookmark {
+        right: 1.5rem;
+        top: 0.5rem;
+    }
 }
 
 @media (min-width: 1441px) {
@@ -372,6 +379,9 @@
         width: 100%;
         height: auto;
         object-fit: fill;
+    }
+    .movieBookmark {
+        right: 2.4rem;
     }
 }
 
@@ -416,11 +426,8 @@
         margin-top: 1.4rem;
     }
     .movieBookmark {
-        position: absolute;
-        right: 1.5rem;
+        right: 0.5rem;
         top: 0.5rem;
-        width: 32px;
-        height: 32px;
     }
 }
 

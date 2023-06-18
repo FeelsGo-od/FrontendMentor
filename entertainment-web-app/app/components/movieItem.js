@@ -44,7 +44,7 @@ export default function MovieItem({ type, title, year, category, rating, thumbna
             })
             movieFound ? setBookmarked('full') : setBookmarked('empty')
         } else {
-            setBookmarked('full')
+            setBookmarked('empty')
         }
     }, [])
 
