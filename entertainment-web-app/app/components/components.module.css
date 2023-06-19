@@ -381,7 +381,8 @@
         object-fit: fill;
     }
     .movieBookmark {
-        right: 2.4rem;
+        right: 1rem;
+        top: 0.7rem;
     }
 }
 
