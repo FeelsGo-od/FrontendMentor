@@ -14,7 +14,7 @@ export default function SearchInput({ setSearchInput, moviesForSearch, setSearch
   useEffect(() => {
     const searchMovies = moviesForSearch.filter((movie) => movie.title.toLowerCase().includes(inputValue.toLowerCase()))
     setSearchResult(searchMovies)
-  }, [inputValue])
+  }, [inputValue, setInputValue])
 
   return (
     <form className={`${styles.searchForm} pd16`}>

@@ -46,7 +46,7 @@ export default function MovieItem({ type, title, year, category, rating, thumbna
         } else {
             setBookmarked('empty')
         }
-    }, [])
+    }, [thumbnail])
 
     const handleBookmarkChange = () => {
         bookmarked === 'empty' ? setBookmarked('full') : setBookmarked('empty')

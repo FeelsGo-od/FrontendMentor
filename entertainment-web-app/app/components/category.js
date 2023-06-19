@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './components.module.css'
 import MovieItem from './movieItem'
 
-export default function Category({ name, category, movies, type, setMoviesForSearch = null }) {
+export default function Category({ name, category, movies, type, setMoviesForSearch }) {
   let categoryMovies
   const [bookmarkedMovies, setBookmarkedMovies] = useState()
 
@@ -34,14 +34,12 @@ export default function Category({ name, category, movies, type, setMoviesForSea
   }
 
   useEffect(() => {
-    if(setMoviesForSearch !== null) {
-      if (category.split(' ')[0] === 'Bookmarked' && bookmarkedMovies && bookmarkedMovies.length !== 0) {
-        setMoviesForSearch(bookmarkedMovies)
-      } else if (categoryIsFound) {
-        setMoviesForSearch(categoryMovies)
-      } else {
-        setMoviesForSearch(movies)
-      }
+    if (category.split(' ')[0] === 'Bookmarked' && bookmarkedMovies && bookmarkedMovies.length !== 0) {
+      setMoviesForSearch(bookmarkedMovies)
+    } else if (categoryIsFound) {
+      setMoviesForSearch(categoryMovies)
+    } else {
+      setMoviesForSearch(movies)
     }
   }, [bookmarkedMovies, categoryIsFound])
 

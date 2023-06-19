@@ -27,7 +27,7 @@ export default function Main() {
         : (<div>No results found for '{searchInput}'</div>)
         : (
           <>
-            <Category name={'Trending'} category={'isTrending'} movies={movies} type={'carousel'} />
+            <Category name={'Trending'} category={'isTrending'} movies={movies} type={'carousel'} setMoviesForSearch={setMoviesForSearch} />
             <Category name={'Recommended for you'} category={'recommended'} movies={ movies } type={'blocks'} setMoviesForSearch={setMoviesForSearch} />
           </>
         ) }
