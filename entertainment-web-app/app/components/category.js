@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './components.module.css'
 import MovieItem from './movieItem'
 
-export default function Category({ name, category, movies, type }) {
+export default function Category({ name, category, movies, type, setMoviesForSearch = null }) {
   let categoryMovies
   const [bookmarkedMovies, setBookmarkedMovies] = useState()
 
@@ -32,6 +32,18 @@ export default function Category({ name, category, movies, type }) {
       return false
     })
   }
+
+  useEffect(() => {
+    if(setMoviesForSearch !== null) {
+      if (category.split(' ')[0] === 'Bookmarked' && bookmarkedMovies && bookmarkedMovies.length !== 0) {
+        setMoviesForSearch(bookmarkedMovies)
+      } else if (categoryIsFound) {
+        setMoviesForSearch(categoryMovies)
+      } else {
+        setMoviesForSearch(movies)
+      }
+    }
+  }, [bookmarkedMovies, categoryIsFound])
 
   return (
     <div className={`${styles.categoryCont} pd-container ${category === 'recommended' ? styles.containerRecommended : ''}`}>
