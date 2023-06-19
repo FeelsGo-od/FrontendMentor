@@ -79,7 +79,7 @@ export default function MovieItem({ type, title, year, category, rating, thumbna
         <div className={styles.movieItem}>
             <div onClick={handleBookmarkChange} className={styles.movieBookmark}>
                 <div className={styles.movieBookmarkBg}></div>
-                <Image className={styles.movieBookmarkImg} src={`/assets/icon-bookmark-${bookmarked}.svg`} width={11.67} height={14} alt='add to bookmark button' />
+                <Image className={styles.movieBookmarkImg} src={`/assets/icon-bookmark-${bookmarked}.svg`} width={11.67} height={14} quality={100} priority={true} alt='add to bookmark button' />
             </div>
             <div className={styles.movieDescr}>
                 <div className={styles.movieInfo}>
