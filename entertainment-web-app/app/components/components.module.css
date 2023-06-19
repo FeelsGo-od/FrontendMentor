@@ -75,6 +75,12 @@
     height: 100%;
     opacity: 0.5;
     border-radius: 32px;
+    transition: filter 0.4s ease-in-out;
+}
+.movieBookmark:hover .movieBookmarkBg {
+    background: #fff;
+    opacity: initial;
+    transition: filter 0.4s ease-in-out;
 }
 .movieBookmark img {
     top: 0;
@@ -83,6 +89,11 @@
     left: 0;
     margin: auto auto;
     position: absolute;
+    transition: filter 0.4s ease-in-out;
+}
+.movieBookmark:hover > img {
+    filter: brightness(0.5);
+    transition: filter 0.4s ease-in-out;
 }
 .img {
     border-radius: 0.5rem;
