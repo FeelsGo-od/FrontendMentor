@@ -1,0 +1,29 @@
+.searchResult {
+    margin-left: 2.25rem;
+}
+
+.searchResult .searchTitle {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.5px;
+    margin-top: 2.125rem;
+}
+
+.searchResult .blocksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 40px;
+}
+
+.searchResult .components_movieDescr__NAvRo  {
+    position: static;
+    margin-top: 13px;
+}
+
+.searchResult .components_movieItem__a8b5y {
+    display: flex;
+    flex-direction: column-reverse;
+}

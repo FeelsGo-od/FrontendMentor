@@ -15,8 +15,8 @@ export default function Movies() {
     <div className={styles.main}>
       <SearchInput searchInput={searchInput} setSearchInput={setSearchInput} moviesForSearch={moviesForSearch} setSearchResult={setSearchResult} />
       { searchInput ? searchResult.length > 0 ? (
-          <div>
-            Found results for '{searchInput}'
+          <div className='searchResult'>
+            <p className='searchTitle'>Found {searchResult.length} results for '{searchInput}'</p>
             <div className='blocksContainer'>
               {searchResult.map((movie, i) => (
                 <MovieItem type={'blocks'} key={i} title={movie['title']} year={movie['year']} category={movie['category']} rating={movie['rating']} thumbnail={movie['thumbnail']['regular']} movieObj={movie} />
@@ -24,7 +24,7 @@ export default function Movies() {
             </div>
           </div>
         ) 
-        : (<div>No results found for '{searchInput}'</div>)
+        : (<div className='searchResult'>No results found for '{searchInput}'</div>)
         : (
           <>
             <Category name={'Movies'} category={'Movie'} movies={movies} type={'blocks'} setMoviesForSearch={setMoviesForSearch} />

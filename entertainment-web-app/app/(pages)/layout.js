@@ -2,6 +2,7 @@ import React from 'react'
 import { Outfit } from 'next/font/google'
 
 import Navbar from '../layouts/navbar'
+import './globals.css'
 
 const outfit = Outfit({ subsets: ['latin'] })
 

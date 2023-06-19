@@ -17,7 +17,7 @@
     transition: fill 0.22s ease-in;
 }
 .sidebar li:hover path {
-    fill: #fff;
+    fill: #FC4747;
     transition: fill 0.22s ease-in;
 }
 .logo {

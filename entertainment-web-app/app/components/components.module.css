@@ -348,7 +348,7 @@
         height: 12px;
     }
     .blocksContainer .movieDescr {
-        margin-top: 2px;
+        margin-top: 9px;
     }
     .movieCategoryTitle img {
         left: -3px;
@@ -400,6 +400,9 @@
 @media (max-width: 512px) {
     .blocksContainer {
         grid-template-columns: repeat(2, minmax(8.26rem, 13.75rem));
+    }
+    .searchInput {
+        font-size: 1.27rem;
     }
 }
 
